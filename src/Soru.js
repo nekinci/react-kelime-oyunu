@@ -6,6 +6,7 @@ class Soru extends React.Component {
         super(props);
         this.state = {};
     }
+    //Propstan soruyu alıyor ve title burada yer alıyor.
     render(){
         return (
          

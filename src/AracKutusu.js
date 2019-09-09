@@ -7,7 +7,7 @@ class AracKutusu extends React.Component{
         super(props);
         this.props = props;
     }
-
+    // Harf alma ve Cevapla ma butonları burada.
     render(){
         return <div className="arackutusu">
             <div className="buton-wrapper">
