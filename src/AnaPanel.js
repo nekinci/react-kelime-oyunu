@@ -2,6 +2,7 @@ import React from 'react';
 import Kutucuklar from './Kutucuklar';
 import Soru from './Soru';
 import AracKutusu from './AracKutusu';
+import mp3file from './sounds/zap1.mp3';
 class AnaPanel extends React.Component{
 
     constructor(props){
@@ -17,9 +18,10 @@ class AnaPanel extends React.Component{
             bg:Array(this.cevaplar[this.soruNo].length).fill('white'),
             cevap:this.cevaplar[this.soruNo],
             soru:this.sorular[this.soruNo],
-            puan: 0
+            puan: 0,
+            sure: "3:00"
         };
-        
+        this.sure = 15;
         this.degis = this.degis.bind(this);
         this.kontrolEt = this.kontrolEt.bind(this);
         
@@ -29,10 +31,29 @@ class AnaPanel extends React.Component{
         for (var i = 0; i < this.state.cevap.length; i++ ){
             this.dizi.push(i);
         }
+
+        this.geriSayim = this.geriSayim.bind(this);
         
     }
 
 
+
+    geriSayim(){
+        this.sure--;
+        var dakika = Math.floor(this.sure / 60);
+        var saniye = this.sure % 60;
+        var sure = "";
+        if(saniye<10)
+        sure = "0" + dakika + ":0" + saniye;
+        else
+        sure = "0" + dakika + ":" + saniye;
+        
+        this.setState({sure: sure});
+        if(this.sure === 0){
+            clearInterval(this.interval1);
+            console.log('süre bitti');
+        }
+    }
 
     harfAl(e){
 
@@ -106,6 +127,7 @@ class AnaPanel extends React.Component{
     componentDidMount(){
         //Component yaratıldıktan sonra panel ' e focuslanıyoruz ki Enter ve Space tuşlarını dinleyebilelim.
         document.getElementsByClassName('panel')[0].focus();
+        this.interval1 = setInterval(this.geriSayim,1000);
     }
 
     kontrolEt(){
@@ -174,11 +196,15 @@ class AnaPanel extends React.Component{
       
     degis(e,it){
         //Harfe basıldığında büyük harfe çevir ardından state 'i güncelle.
+        this.audio = new Audio(mp3file);
+        this.audio.play();
         let x = e.target.value;
         x = x.toString().toUpperCase();
         let harfler = this.state.harfler.slice();
         harfler[it] = x;
         this.setState({ harfler: harfler });
+
+        
     }
 
     //Render Function
@@ -186,12 +212,11 @@ class AnaPanel extends React.Component{
 
         return (
         <div className = {'panel'} onKeyUp={this.keyup.bind(this)} tabIndex={0}>
-            
             <div className="center">
                 <div className="skor-paneli">
                     <ul>
-                        <li> <span><i className="mdi mdi-coin"></i> {this.state.puan}</span> </li>
-                        <li> <span><i className="mdi mdi-clock"></i> 3:00</span> </li>
+                        <li> <span><i className="mdi mdi-trophy-variant"></i> {this.state.puan}</span> </li>
+                        <li> <span><i className="mdi mdi-clock"></i> {this.state.sure}</span> </li>
                     </ul>
                 </div>
                 <Soru 

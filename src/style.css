@@ -1,5 +1,4 @@
-
-#root{
+#root {
     height: 100%;
     width: 100%;
     display: flex;
@@ -12,27 +11,150 @@
     flex-wrap: wrap;
     align-items: center;
     position: relative;
-   
+}
+
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+    .modal-content {
+    width: 450px;
+    height: 500px;
+    margin: 0 auto;
+    transform: translateY(50%);
+    border-radius: 30px;
+    font-size: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-content span {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.navigation {
+    width: 440px;
+    height: 70px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 1001 !important;
+    background-color: transparent;
+    top: calc(50% - 35px);
+}
+
+.show {
+    display: initial !important;
+}
+
+.navigation-buton {
+    background-color: rgb(66, 6, 60);
+    width: 70px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    margin-left: -63px;
+    left: 0;
+    border-radius: 50px;
+    border: 0;
+    color: white;
+    display: none;
+}
+
+
+.navigation-buton:hover {
+    background-color: rgb(51, 43, 43);
+}
+
+.menu-buton {
+    border-radius: 30px;
+    width: 300px;
+    height: 70px;
+    background-color: rgb(90, 6, 82);
+    margin: 5px auto;
+    border: 0;
+    color: white;
+    font-size: 18px;
+    text-align: left;
 
 }
 
-.panel{
+.menu-title {
+    padding-bottom: 30px;
+    font-size: 24px;
+    background-color: rgb(66, 6, 60);
+    width: 240px;
+    border-radius: 30px;
+    margin: 0 auto;
+    margin-bottom: -25px;
+    z-index: 1000 !important;
+    position: relative;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.center-menu {
+    top: 0 !important;
+    transform: translateY(0) !important;
+}
+
+.menu-buton i {
+    font-size: 24px;
+    padding-left: 90px;
+    padding-right: 5px;
+}
+
+
+.ortala {
+    position: relative;
+    top: 50%;
+    transform: translateY(50%);
+}
+
+.menu-buton:hover {
+    width: 98%;
+    background-color: rgb(51, 43, 43);
+    padding-left: 17%;
+}
+
+.menu {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #31092D;
+    border-radius: 30px;
+    width: 420px;
+    padding: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    z-index: 1 !important;
+    position: relative;
+}
+
+.panel {
     width: 100%;
     height: 100%;
     position: relative;
 }
-.center{
-    top: calc(50% - 70px);
-    transform:translateY(-50%);
+
+.center {
+    top: calc(50% - 280px);
     width: 700px !important;
     margin: 0 auto;
     position: relative;
-
-
+    border-radius: 30px;
 }
 
-.title{
-    background-color: ;
+.title {
+    background-color: #31092D;
     width: 700px;
     height: 80px;
     display: flex;
@@ -43,12 +165,14 @@
     background-color: #31092D;
 
 }
-.title span{
+
+.title span {
     margin: 0 auto;
     font-size: 28px;
     font-weight: 700;
 }
-.kutucuk-wrapper{
+
+.kutucuk-wrapper {
     height: 70px;
     margin: 0px auto;
     display: block;
@@ -57,18 +181,21 @@
     padding: 5px;
     background-color: #31092D;
 
-    
+
 }
-.soru-wrapper{
+
+.soru-wrapper {
     display: block;
     width: 700px;
     margin: 0 auto;
     margin-top: 10%;
     align-items: center;
 }
-.buton-wrapper{
+
+.buton-wrapper {
     margin: 0 auto;
 }
+
 .kutucuk {
     height: 100%;
     box-sizing: border-box;
@@ -83,7 +210,7 @@
     text-transform: uppercase;
 }
 
-.soru{
+.soru {
     background-color: rgb(70, 3, 63);
     display: inline-block;
     padding: 20px;
@@ -96,26 +223,28 @@
 
 
 }
-.kutucuk:focus{
-    border:3px solid black;
+
+.kutucuk:focus {
+    border: 3px solid black;
 
 }
 
-.arackutusu{
+.arackutusu {
     height: 70px;
     box-sizing: border-box;
-    width: 700px;   
+    width: 700px;
     margin: 0 auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
     background-color: #31092D;
-    padding:5px;
+    padding: 5px;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
 
-.harf-al,.cevapla{
+.harf-al,
+.cevapla {
     height: 100%;
     width: 150px;
     color: white;
@@ -131,12 +260,13 @@
 }
 
 
-.cevapla:hover,.harf-al:hover{
+.cevapla:hover,
+.harf-al:hover {
     background-color: rgb(51, 43, 43);
 }
 
 
-.skor-paneli{
+.skor-paneli {
     position: relative;
     width: 700px;
     height: 50px;
@@ -146,17 +276,19 @@
 
 }
 
-.skor-paneli ul{
+.skor-paneli ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;    
+    overflow: hidden;
 }
-.skor-paneli ul li{
+
+.skor-paneli ul li {
     float: right;
     width: 120px;
 }
-.skor-paneli ul li span{
+
+.skor-paneli ul li span {
     display: block;
     color: white;
     text-align: center;
