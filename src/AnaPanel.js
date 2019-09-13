@@ -2,7 +2,8 @@ import React from 'react';
 import Kutucuklar from './Kutucuklar';
 import Soru from './Soru';
 import AracKutusu from './AracKutusu';
-import mp3file from './sounds/zap1.mp3';
+import mp3file from './sounds/typing.mp3';
+import coin from './sounds/coin.wav';
 class AnaPanel extends React.Component{
 
     constructor(props){
@@ -161,6 +162,7 @@ class AnaPanel extends React.Component{
             this.setState({
                 puan: this.yeniPuan
             });
+            new Audio(coin).play();
         }
         //Eğer yanlış cevapsa puanı güncelle
         else{
