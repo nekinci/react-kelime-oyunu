@@ -12,7 +12,7 @@ class Soru extends React.Component {
          
             <div className="soru-wrapper">
                 <div className="title">
-                   <span>Kelime Oyunu</span>
+                   <span>KELiME OYUNU</span>
                 </div>
                 <div className={'soru'}>
                     <span className="">{this.props.soru}</span>

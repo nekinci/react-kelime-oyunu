@@ -6,6 +6,7 @@ class Kutucuk extends React.Component{
         super(props);
         this.props = props;
         this.input = null;
+        this.durum = false;
     }
     componentDidMount(){
     }
@@ -24,8 +25,13 @@ class Kutucuk extends React.Component{
             e.preventDefault();
             return;
         }
-        
-    }
+        if(e.keyCode === 8){
+            if(e.target.value === '')
+                this.durum = true;
+            else
+                this.durum = false;
+        }
+    }   
 
     render(){
         return <input 

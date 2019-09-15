@@ -19,11 +19,11 @@ class Kutucuklar extends React.Component{
     }
 
     backFocus(e,i){
-        //Backspace tuşuna bastığında önceki inputa dön
-        if(e.keyCode === 8 && i>0){
-            this.inputRefs[i-1].input.focus();return;
+        //Backspace tuşuna bastığında önce sil daha sonra ikinci bastığında bir önceki inputa dön
+        if(this.inputRefs[i].durum && e.keyCode === 8 && i>0){
+            this.inputRefs[i-1].input.focus();
+            return;
         }
-
         this.okTuslari(e,i);
     }
 
