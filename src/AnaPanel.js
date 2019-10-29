@@ -5,13 +5,16 @@ import AracKutusu from './AracKutusu';
 import mp3file from './sounds/typing.mp3';
 import coin from './sounds/coin.wav';
 import tick from './sounds/tick.mp3';
+
 class AnaPanel extends React.Component {
 
     constructor(props) {
         super(props);
         //states
-        this.sorular = ['Türkiyenin başkenti neresidir?', 'Alanya', 'Antalya', 'Nevşehir', 'A', 'B', 'C'];
-        this.cevaplar = ['ABCDEFGHJs', 'OK', 'ECE', 'ELA', 'DERE', 'KARE', 'SOĞUK'];
+
+       
+        this.sorular = ['Türkiyenin başkenti neresidir?', 'Soru 2', 'Soru 3', 'Soru 4', 'Soru 5', 'Soru 6', 'Soru 7'];
+        this.cevaplar = ['ANKARA', 'OK', 'ECE', 'ELA', 'DERE', 'KARE', 'SOĞUK'];
         this.soruNo = 0;
         this.state =
             {

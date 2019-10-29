@@ -66,7 +66,7 @@ class Menu extends React.Component {
                     </div>
                     <a href={"https://github.com/nekinci"} target={"_blank"}>Github</a><div></div>
                     <a href={"https://www.linkedin.com/in/niyazi-ekinci-a2043bab/"} target={"_blank"}>Linkedin</a><div></div>
-                    <a href={"/"} >Web Sitem</a>
+                    <a href={"/a"} >Web Sitem</a>
                 </div>
             </Modal>
         }
